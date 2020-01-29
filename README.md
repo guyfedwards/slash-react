@@ -1,6 +1,12 @@
 # slash-react
+A lambda function for a slack slash command to allow easy reactions to messages without using the mouse.
 
-Uses user token for api as bot users cannot get conversation history
+## Usage
+```
+/react :poop: :partyparrot: 3
+```
+
+Uses user token for api as bot users cannot get conversation history (TODO: seems like bots can have `channel:history` permissions)
 
 ## Steps
 #### Create new slack app
