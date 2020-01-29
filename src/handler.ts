@@ -2,7 +2,7 @@ import * as qs from 'querystring'
 import { WebClient, WebAPICallResult } from '@slack/web-api'
 import { splitText } from './utils'
 
-const web = new WebClient(process.env.SLACK_TOKEN)
+const web = new WebClient()
 
 interface Message {
   ts: string
@@ -26,7 +26,8 @@ export const hello = async event => {
 
   const { messages } = await web.conversations.history({
     channel: body.channel_id as string,
-    limit: msgIndex + 1
+    limit: msgIndex + 1,
+    token: process.env.USER_TOKEN
   })
 
   const msgTs = (messages as Message[])[msgIndex].ts
@@ -42,7 +43,8 @@ export const hello = async event => {
     requests.push(web.reactions.add({
       channel: body.channel_id as string,
       name: emoji.replace(/:/g, ''),
-      timestamp: msgTs
+      timestamp: msgTs,
+      token: process.env.BOT_TOKEN
     }))
   }
 

@@ -6,7 +6,9 @@ A lambda function for a slack slash command to allow easy reactions to messages 
 /react :poop: :partyparrot: 3
 ```
 
-Uses user token for api as bot users cannot get conversation history (TODO: seems like bots can have `channel:history` permissions)
+## Auth
+Uses `USER_TOKEN` for getting conversation history as bot users cannot.
+Uses the `BOT_TOKEN` for adding the reaction.
 
 ## Steps
 #### Create new slack app
