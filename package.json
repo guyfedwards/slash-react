@@ -4,9 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@slack/web-api": "^5.7.0",
     "serverless": "^1.62.0"
   },
   "devDependencies": {
+    "serverless-dotenv-plugin": "^2.1.1",
     "serverless-offline": "^5.12.1",
     "serverless-plugin-typescript": "^1.1.9",
     "typescript": "^3.7.5"
@@ -14,6 +16,7 @@
   "scripts": {
     "sls": "sls",
     "dev": "sls offline",
-    "tunnel": "ngrok http 127.0.0.1:3000"
+    "tunnel": "ngrok http 127.0.0.1:3000",
+    "deploy": "sls deploy"
   }
 }

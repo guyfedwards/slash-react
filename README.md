@@ -1,5 +1,7 @@
 # slash-react
 
+Uses user token for api as bot users cannot get conversation history
+
 ## Steps
 #### Create new slack app
 Go to api.slack.com/apps > 'Create New App'
